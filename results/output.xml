@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-04T18:35:55.212221" rpa="false" schemaversion="5">
+<suite id="s1" name="Formulario" source="C:\Users\Felipe\Desktop\Youtube channels\robot_project\tests\formulario.robot">
+<kw name="Abrir navegador" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-04T18:35:55.438999" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<arg>http://localhost:3000/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-04T18:35:55.438831" elapsed="1.505471"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-04T18:35:56.944523" elapsed="0.034571"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.3s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-06-04T18:35:56.979284" elapsed="0.000235"/>
+</kw>
+<status status="PASS" start="2025-06-04T18:35:55.438267" elapsed="1.541335"/>
+</kw>
+<test id="s1-t1" name="Cadastro de colaborador com dados válidos" line="12">
+<kw name="Preencher formulário com dados" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T18:35:56.980699" level="INFO">Typing text 'Felipe' into text field 'id:form-nome'.</msg>
+<arg>id:form-nome</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T18:35:56.980427" elapsed="0.966073"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T18:35:57.946932" level="INFO">Typing text 'Boss' into text field 'id:form-cargo'.</msg>
+<arg>id:form-cargo</arg>
+<arg>${cargo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T18:35:57.946697" elapsed="0.961049"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-04T18:35:58.908158" level="INFO">Typing text 'https://picsum.photos/200/300?grayscale' into text field 'id:form-imagem'.</msg>
+<arg>id:form-imagem</arg>
+<arg>${IMAGEM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T18:35:58.907935" elapsed="0.967468"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-04T18:35:59.875783" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>class:lista-suspensa</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T18:35:59.875597" elapsed="0.649093"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-04T18:36:00.525093" level="INFO">Clicking element '//option[contains(.,'Front-End')]'.</msg>
+<arg>//option[contains(.,'${time}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T18:36:00.524871" elapsed="0.621554"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-04T18:36:01.146800" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>id:form-botao</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-04T18:36:01.146618" elapsed="0.643881"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-04T18:36:02.791219" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-04T18:36:01.790684" elapsed="1.000639"/>
+</kw>
+<arg>Felipe</arg>
+<arg>Boss</arg>
+<arg>Front-End</arg>
+<status status="PASS" start="2025-06-04T18:35:56.980169" elapsed="5.811254"/>
+</kw>
+<kw name="Validar colaborador criado" owner="keywords">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-06-04T18:36:03.405045" level="INFO">Element 'class:colaborador' is displayed.</msg>
+<arg>class:colaborador</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-04T18:36:02.792036" elapsed="0.613121"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-04T18:36:06.405927" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-04T18:36:03.405313" elapsed="3.000731"/>
+</kw>
+<status status="PASS" start="2025-06-04T18:36:02.791749" elapsed="3.614393"/>
+</kw>
+<status status="PASS" start="2025-06-04T18:35:56.979684" elapsed="9.426680"/>
+</test>
+<test id="s1-t2" name="Cadastro em massa de colaboradores" line="19">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-06-04T18:36:06.407320" level="INFO">${colaboradores} = ['Felipe|QA|Front-End', 'Maria|Dev|Back-End', 'João|Tester|Mobile', 'Ana|PM|Produto', 'Lucas|Designer|UI']</msg>
+<var>${colaboradores}</var>
+<arg>Felipe|QA|Front-End</arg>
+<arg>Maria|Dev|Back-End</arg>
+<arg>João|Tester|Mobile</arg>
+<arg>Ana|PM|Produto</arg>
+<arg>Lucas|Designer|UI</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-06-04T18:36:06.407157" elapsed="0.000195"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-04T18:36:06.408550" level="FAIL">Evaluating expression '"Felipe|QA|Front-End".split("|")' failed: ModuleNotFoundError: No module named 'BuiltIn'</msg>
+<var>${dados}</var>
+<arg>"${colaborador}".split("|")</arg>
+<arg>modules=BuiltIn</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="FAIL" start="2025-06-04T18:36:06.407752" elapsed="0.000964">Evaluating expression '"Felipe|QA|Front-End".split("|")' failed: ModuleNotFoundError: No module named 'BuiltIn'</status>
+</kw>
+<kw name="Preencher formulário com dados" owner="keywords">
+<arg>${dados[0]}</arg>
+<arg>${dados[1]}</arg>
+<arg>${dados[2]}</arg>
+<status status="NOT RUN" start="2025-06-04T18:36:06.408886" elapsed="0.000032"/>
+</kw>
+<kw name="Validar colaborador criado" owner="keywords">
+<status status="NOT RUN" start="2025-06-04T18:36:06.409027" elapsed="0.000026"/>
+</kw>
+<var name="${colaborador}">Felipe|QA|Front-End</var>
+<status status="FAIL" start="2025-06-04T18:36:06.407658" elapsed="0.001443">Evaluating expression '"Felipe|QA|Front-End".split("|")' failed: ModuleNotFoundError: No module named 'BuiltIn'</status>
+</iter>
+<var>${colaborador}</var>
+<value>@{colaboradores}</value>
+<status status="FAIL" start="2025-06-04T18:36:06.407487" elapsed="0.001691">Evaluating expression '"Felipe|QA|Front-End".split("|")' failed: ModuleNotFoundError: No module named 'BuiltIn'</status>
+</for>
+<status status="FAIL" start="2025-06-04T18:36:06.406813" elapsed="0.002558">Evaluating expression '"Felipe|QA|Front-End".split("|")' failed: ModuleNotFoundError: No module named 'BuiltIn'</status>
+</test>
+<kw name="Fechar navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-04T18:36:06.410149" elapsed="2.376283"/>
+</kw>
+<status status="PASS" start="2025-06-04T18:36:06.410000" elapsed="2.376544"/>
+</kw>
+<status status="FAIL" start="2025-06-04T18:35:55.213327" elapsed="13.573267"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Formulario" id="s1" pass="1" fail="1" skip="0">Formulario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

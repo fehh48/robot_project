@@ -3,12 +3,6 @@ Library    SeleniumLibrary
 Resource   variables.robot
 
 *** Keywords ***
-Abrir navegador
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
-
-Fechar navegador
-    Close Browser
 
 Preencher formulário com dados
     [Arguments]    ${nome}    ${cargo}    ${time}
